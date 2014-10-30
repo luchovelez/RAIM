@@ -3,7 +3,7 @@ package audiodiccionario
 class Diccionario {
     String creador
     String descripcion
-    String Tematica
+    String tematica
     String toString() {
         "${descripcion}"
     }
@@ -11,5 +11,6 @@ class Diccionario {
     static hasMany = [definiciones : Definicion]
 
     static constraints = {
+        
     }
 }
