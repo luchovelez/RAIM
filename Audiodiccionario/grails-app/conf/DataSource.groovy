@@ -1,10 +1,11 @@
 dataSource {
-    pooled = false
-    dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-    url = "jdbc:postgresql://localhost:5432/audiodicionario"
+pooled = true
     driverClassName = "org.postgresql.Driver"
     username = "postgres"
-    password = "admin"
+    password = "pass"
+    dialect = org.hibernate.dialect.PostgreSQLDialect
+ 
+    
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -21,18 +22,30 @@ environments {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url="jdbc:postgresql://localhost:5432/audiodiccionario"
+            dbCreate = "create-drop"
+            driverClassName = "org.postgresql.Driver"
+            username = "postgres"
+            password = "pass"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
             url="jdbc:postgresql://localhost:5432/audiodiccionario"
+            dbCreate = "create-drop"
+            driverClassName = "org.postgresql.Driver"
+            username = "postgres"
+            password = "pass"
         }
     }
     production {
         dataSource {
             dbCreate = "update"
             url="jdbc:postgresql://localhost:5432/audiodiccionario"
+            dbCreate = "create-drop"
+            driverClassName = "org.postgresql.Driver"
+            username = "postgres"
+            password = "pass"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
