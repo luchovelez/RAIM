@@ -1,5 +1,7 @@
 package audiodiccionario
+import grails.rest.*
 
+@Resource(uri='/diccionario')
 class Diccionario {
     String creador
     String descripcion
@@ -7,7 +9,7 @@ class Diccionario {
     String toString() {
         "${descripcion}"
     }
-    static belongsTo = Diccionario //Sin mapa [author : Author] 
+ // static belongsTo = [diccionario : Diccionario] 
     static hasMany = [definiciones : Definicion]
 
     static constraints = {
