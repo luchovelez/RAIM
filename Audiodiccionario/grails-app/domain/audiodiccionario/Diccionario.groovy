@@ -1,7 +1,7 @@
 package audiodiccionario
-import grails.rest.*
+//import grails.rest.*
 
-@Resource(uri='/diccionario')
+//@Resource(uri='/diccionario')
 class Diccionario {
     String creador
     String descripcion
