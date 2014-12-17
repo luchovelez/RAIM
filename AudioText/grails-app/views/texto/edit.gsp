@@ -37,5 +37,6 @@
 				</fieldset>
 			</g:form>
 		</div>
+                <script src="speech-input.js"></script>
 	</body>
 </html>
