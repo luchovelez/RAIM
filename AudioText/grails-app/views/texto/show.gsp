@@ -4,6 +4,11 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+                 <asset:javascript src="mespeak.js"/>
+                <asset:script type="text/javascript">
+                 meSpeak.loadConfig("mespeak_config.json");
+                 meSpeak.loadVoice("voices/es-la.json");
+                </asset:script>
 		<g:set var="entityName" value="${message(code: 'texto.label', default: 'Texto')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
@@ -33,23 +38,17 @@
 					
 				</li>
 				</g:if>
+                                
                                 <g:if test="${textoInstance?.texto}">
 				<li class="fieldcontain">
 					<span id="texto-label" class="property-label"><g:message code="texto.texto.label" default="Texto" /></span>
-					
+					<div id="${fieldValue(bean: textoInstance, field: "texto")}">
 						<span class="property-value" aria-labelledby="texto-label"><g:fieldValue bean="${textoInstance}" field="texto"/></span>
-				
-                                  <div id="${fieldValue(bean: textoInstance, field: "texto")}">
-						<span class="property-value" aria-labelledby="definicion-label"><g:fieldValue bean="${textoInstance}" field="texto"/>
-                                                    </br>  
-                                        <!--  <embed src="http://translate.google.com/translate_tts?tl=es&q=${fieldValue(bean: diccionarioInstance, field: 'definicion')}" autostart=true loop=false volume=100 HIDDEN="true"/></span> -->
-                                         <script type="text/javascript" src="http://vozme.com/get_text.js"></script>
-                                            <a href="javascript:void(0);" onclick="get_id('${fieldValue(bean: diccionarioInstance, field: "palabra")}','es','ml');">
-                                            <asset:image src="speaker-1-512.png" alt="Escuchar" height="54" width="62"/></a></div>
-
-
-</div>			
-                                </li>
+					</div>
+                                        <script type="text/javascript" src="http://vozme.com/get_text.js"></script>
+                                        <a href="javascript:void(0);" onclick="get_id('${fieldValue(bean: textoInstance, field: "texto")}','es','fm');">
+                                        <asset:image src="speaker-1-512.png" alt="Escuchar" height="54" width="62"/></a></div>
+				</li>
 				</g:if>
 			
 			</ol>
