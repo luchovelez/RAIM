@@ -33,10 +33,34 @@
 			
 				<g:if test="${vocabularioInstance?.definicion}">
 				<li class="fieldcontain">
+                                    
+                                    
+                                    
 					<span id="definicion-label" class="property-label"><g:message code="vocabulario.definicion.label" default="Definicion" /></span>
-					
-						<span class="property-value" aria-labelledby="definicion-label"><g:fieldValue bean="${vocabularioInstance}" field="definicion"/></span>
-                                                <div hidden="true"><iframe src="http://translate.google.com/translate_tts?tl=es&q=${fieldValue(bean: vocabularioInstance, field: 'definicion')}" height="0" ></iframe></div>
+					 <div id="alice2">
+                                        <span class="property-value" aria-labelledby="definicion-label"><g:fieldValue bean="${vocabularioInstance}" field="definicion"/></span>
+                                        </div>
+
+                                       
+
+
+<script type="text/javascript" src="http://vozme.com/get_text.js"></script>
+<button style="background-color:white; 
+ background-image:
+ url(http://vozme.com/img/megaphone40x40w.gif); 
+ background-position: left center; 
+ background-repeat:no-repeat; 
+ height: 48px; font-size:70%; 
+ padding:4px 4px 4px 44px;" 
+ onclick="get_id('alice2','es','fm');">
+Escuchar el Texto</button>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                             <!--  <div hidden="true"><iframe src="http://translate.google.com/translate_tts?tl=es&q=${fieldValue(bean: vocabularioInstance, field: 'definicion')}" height="0" ></iframe></div>-->
 					</li>
 				</g:if>
 			

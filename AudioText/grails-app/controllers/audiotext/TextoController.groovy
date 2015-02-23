@@ -14,6 +14,33 @@ class TextoController {
         params.max = Math.min(max ?: 10, 100)
         respond Texto.list(params), model:[textoInstanceCount: Texto.count()]
     }
+    
+    def list() {
+        params.max = Math.min(params.max ? params.int('max') : 5, 100)
+ 
+        def textoList = Texto.createCriteria().list (params) {
+            if ( params.query ) {
+                ilike("titulo", "%${params.query}%")
+            }
+        }
+ 
+        [textoInstanceList: textoList, textoInstanceTotal: textoList.totalCount]
+    }
+    
+    def searchableService //inject the service (make sure the name is correct)
+    
+// @Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+    def search = {
+    def query = params.q
+    if(query){
+        def srchResults = searchableService.search(query)
+        render(view: "list",
+               model: [textoInstanceList: srchResults.results,
+                     textoInstanceTotal:srchResults.total])
+    }else{
+        redirect(action: "list")
+    }
+}
 
     def show(Texto textoInstance) {
         respond textoInstance

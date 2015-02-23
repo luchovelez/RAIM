@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Bienvenido a AudioText</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
@@ -83,38 +83,30 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
+			<h1>Menu Principal</h1>
 			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+                            <li><a href="texto/index">Listar Textos</a></li>
+                            <li><a href="texto/create">Crear Textos</a></li>
+                            <li><a href="texto/list">Buscar Textos</a></li>
+                            
+				
 			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
+			
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>Bienvenido al AudioDiccionario</h1>
+                        <p align="justify">Bienvenido al AudioText. <br> Esta aplicacion le permitira crear diversos Textos al
+                        uusuario de diversas tematicas y diversos niveles educativos que le permitira posteriormente su clasificacion
+                        y construccion comnunitaria de otros usuarios o autores, que permitira que la aplicacion de audiodiccionario 
+                        diga creciendo permanentemente.La aplicacion proporciona un motor de sintetizacion de voz para las palabras 
+                        iingresadas de manera nativa, soportando diversos navegadores web</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Modulos Disponibles:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+                            <li>Listar Textos  <a href="texto/index"><asset:image src="list.png" alt="listar"  width="50" height="50"/></a></li>
+                            <li>Agregar Textos <a href="texto/create"><asset:image src="add_list.png" width="50" height="50" alt="agregar diccionario"/></a></li>
+                            <li>Buscar Textos       <a href="texto/list"><asset:image src="search.png" width="50" height="50" alt="Buscar Vocabulario"/></a></li>
 				</ul>
 			</div>
 		</div>
